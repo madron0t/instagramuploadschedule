@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from instabot import Bot
 from config import Config
 import os
@@ -13,6 +15,6 @@ def Uploading():
     print("uploaded")
     os.remove(nextImage)
     Config.CAPTION_LIST.pop(0)
-schedule.every().day.at("11:00").do(Uploading)
+schedule.every(5).minutes.do(Uploading)
 while True:
     schedule.run_pending()
